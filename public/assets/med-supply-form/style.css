@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: black;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 40px 104px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 48.41px;
+  text-align: left;
+  color: #4e97fd;
+}
+
+.please {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24.2px;
+  letter-spacing: 0.017em;
+  text-align: center;
+  color: #576f9d;
+  margin-top: 10px;
+}
+
+.form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px 100px;
+  padding: 20px 0;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+label {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24.2px;
+  letter-spacing: 0.017em;
+  text-align: left;
+  color: #576f9d;
+}
+label > span {
+  color: #e55442;
+}
+.input-container input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #576f9d;
+  border-radius: 8px;
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24.2px;
+  letter-spacing: 0.017em;
+  color: #576f9d;
+}
+
+.phone-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.phone-input-container label span {
+  color: #e55442;
+}
+.phone-input-container div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 48px;
+  border: 1px solid #576f9d;
+  border-radius: 8px;
+  padding: 0 0 0 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24.2px;
+  letter-spacing: 0.017em;
+  color: #576f9d;
+  overflow: hidden;
+}
+
+.phone-input-container div > input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-left: 1px solid #576f9d;
+  border-radius: none;
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24.2px;
+  letter-spacing: 0.017em;
+  color: #576f9d;
+}
+
+.password-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+  width: 100%;
+}
+
+.password-container div {
+  width: 100%;
+}
+.password-container div > input {
+  width: 100%;
+  height: 48px;
+}
+
+.signup-button {
+  font-family: Inter, sans-serif;
+  padding: 20px 75px;
+  top: 1022px;
+  left: 564px;
+  border-radius: 16px;
+  background-color: #4e97fd;
+  border: none;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 24.2px;
+  letter-spacing: 0.017em;
+}
+
+.file-upload-container {
+  width: 100%;
+  /* margin: 50px auto; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.file-upload-label {
+  display: block;
+  width: 100%;
+  padding: 40px;
+  border: 1px solid #576f9d;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.upload-text {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload-file-text {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29.05px;
+  letter-spacing: 0.017em;
+  text-align: left;
+  color: #4e97fd;
+}
+
+.drag-file-text {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24.2px;
+  letter-spacing: 0.017em;
+  text-align: left;
+  color: #576f9d;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-name {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 80px;
+  }
+  .title {
+    font-size: 26px;
+  }
+  .please {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+  .form {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+  .password-container {
+    gap: 20px;
+  }
+  label {
+    font-size: 14px;
+  }
+  .input-container {
+    gap: 10px;
+  }
+  .input-container input,
+  .phone-input-container div,
+  .password-container div > input {
+    height: 40px;
+    font-size: 14px;
+  }
+  .upload-file-text {
+    font-size: 20px;
+  }
+
+  .drag-file-text {
+    font-size: 16px;
+  }
+  .signup-button {
+    padding: 10px 40px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+}

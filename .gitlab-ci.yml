@@ -1,0 +1,20 @@
+image: ubuntu
+stages:
+  - deploy
+
+
+deploy:
+  only:
+    - UAE-main
+  stage: deploy
+  script:
+    - "command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y)"
+    - eval $(ssh-agent -s)
+    - apt-get update && apt-get install rsync -y
+    - echo "$MED_SUPPLYS_SSH_PRIVATE_KEY"
+    - echo "$MED_SUPPLYS_SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - ls
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -H 51.112.23.81  >> ~/.ssh/known_hosts
+    - ssh root@51.112.23.81  -t -o StrictHostKeyChecking=no "cd /var/www/medsupplys-backend/ && git fetch && git reset --hard origin/UAE-main && php artisan optimize:clear && COMPOSER_ALLOW_SUPERUSER=1 composer install"
